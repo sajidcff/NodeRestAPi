@@ -1,19 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Product = require('../models/Product.js');
+var Auction = require('../models/Auction');
 
 /* GET ALL PRODUCTS */
 router.get('/', function(req, res, next) {
-  Product.find(function (err, products) {
+  Auction.find(function (err, auctions) {
     if (err) return next(err);
-    res.json(products);
+    res.json(auctions);
   });
 });
 
 /* GET SINGLE PRODUCT BY ID */
 router.get('/:id', function(req, res, next) {
-  Product.findById(req.params.id, function (err, post) {
+  Auction.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
@@ -22,7 +22,7 @@ router.get('/:id', function(req, res, next) {
 /* SAVE PRODUCT */
 router.post('/', function(req, res, next) {
   console.log(req.body);
-  Product.create(req.body, function (err, post) {
+  Auction.create(req.body, function (err, post) {
     if (err) {
       console.log(err);
       return next(err);
@@ -34,7 +34,7 @@ router.post('/', function(req, res, next) {
 /* UPDATE PRODUCT */
 router.put('/:id', function(req, res, next) {
   console.log(req.body);
-  Product.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Auction.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) {
       console.log(err);
       return next(err);
@@ -45,7 +45,7 @@ router.put('/:id', function(req, res, next) {
 
 /* DELETE PRODUCT */
 router.delete('/:id', function(req, res, next) {
-  Product.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Auction.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
