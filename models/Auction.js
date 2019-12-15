@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var AuctionSchema = new mongoose.Schema({
   _id: String,
+  car_id: String,
   owner_type: String,
   fuel_type: String,
   kms: Number,
