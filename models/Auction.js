@@ -17,6 +17,7 @@ var AuctionSchema = new mongoose.Schema({
   car_reg_num: String,
   insurance_type: String,
   centre_city: String,
+  timer_status: String,
   auc_list_img: Array,
 });
 
