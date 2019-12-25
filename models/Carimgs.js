@@ -12,7 +12,6 @@ var CarimgsSchema = new mongoose.Schema({
   img_apron:Array,
   img_door:Array,
   img_tyre:Array,
-  img_additional_remarks:Array,
   img_firewall:Array,
   img_cowl_top:Array,
   img_upper_cross_member_bonnet_patti:Array,
